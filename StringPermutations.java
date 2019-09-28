@@ -22,19 +22,14 @@ public class StringPermutations {
             result.add(prefix + s);
         }
 
-        // Allocate a boolean array of size 52 (a-z,A-Z)
-        // to keep track for duplicate char used
-        boolean[] repeatedChars = new boolean[52]; // initialize to false
+        // set to keep track for duplicate char used
+        Set<Character> charUsed = new HashSet<>();
 
         for (int i = 0; i < s.length(); i++) {
-            int charIndex = (
-                Character.isLowerCase(s.charAt(i)) ?
-                (s.charAt(i) - (int) 'a') : (s.charAt(i) - (int) 'A' + 26)
-            );
-            if (!repeatedChars[charIndex]) {
+            if (!charUsed.contains( s.charAt(i) )) {
                 permuteHelper(s.substring(0, i) + s.substring(i + 1, s.length()),
                                 prefix + s.charAt(i), result);
-                repeatedChars[charIndex] = true;
+                charUsed.add(s.charAt(i));
             }
         }
     }
