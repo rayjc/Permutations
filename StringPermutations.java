@@ -40,7 +40,11 @@ public class StringPermutations {
 
     public static void main(String[] args) {
         StringPermutations stringPerm = new StringPermutations();
-        stringPerm.printPermutations("abc");
+        if ( args.length > 0 ) {
+            stringPerm.printPermutations(args[0]);
+        } else {
+            stringPerm.printPermutations("abc");
+        }
     }
 
 }

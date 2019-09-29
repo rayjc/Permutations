@@ -14,7 +14,7 @@ To compile:
 javac -sourcepath .  -d . -cp <path-to-junit-jar>/junit-4.13-beta-3.jar StringPermutations.java StringPermutationsTest.java
 
 To run:
-java -cp . rayjc.app.StringPermutations
+java -cp . rayjc.app.StringPermutations [input-string]
 java -cp <path-to-junit-jar>/junit-4.13-beta-3.jar:<path-to-junit-jar>/hamcrest-core-1.3.jar:. org.junit.runner.JUnitCore rayjc.app.StringPermutationsTest
 
 
@@ -25,4 +25,4 @@ To compile:
 javac -d . StringPermutations.java
 
 To run:
-java rayjc.app.StringPermutations
+java rayjc.app.StringPermutations [input-string]
